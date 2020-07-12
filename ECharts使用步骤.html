@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 第二步：准备一个具有大小的容器 -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <!-- 第一步：引入JS文件 -->
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        // 第三步：初始化echarts实例对象
+        let myChart = echarts.init(document.querySelector("#main"));
+        // 第四步：指定配置项和数据(option)
+        let option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [820, 932, 901, 934, 1290, 1330, 1320],
+                type: 'line'
+            }]
+        };
+        //第五步：将配置项设置给echarts实例对象
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
